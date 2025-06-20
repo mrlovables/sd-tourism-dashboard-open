@@ -1,8 +1,25 @@
 <template>
-  <main class="container"></main>
+  <main class="container">
+    <!-- 顶部标题 -->
+    <CHeader />
+    <!-- 地图部分 -->
+    <CMap />
+    <!-- 左侧数据面板 -->
+    <LeftPanel />
+    <!-- 右侧数据面板 -->
+    <RightPanel />
+    <!-- 底部组件 -->
+    <CFooter />
+  </main>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import CHeader from "@/components/CHeader.vue";
+import CMap from "@/components/CMap.vue";
+import LeftPanel from "@/components/leftPanel.vue";
+import RightPanel from "@/components/rightPanel.vue";
+import CFooter from "@/components/CFooter.vue";
+</script>
 
 <style lang="scss" scoped>
 .container {

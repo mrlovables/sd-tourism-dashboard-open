@@ -24,9 +24,9 @@ export const getMapOption = () => {
   for (let i = 1; i <= colorList.length; i++) {
     geoList.push({
       map: "sd",
-      aspectScale: 0.85,
+      aspectScale: 0.9,
       z: 12 - i,
-      layoutCenter: ["50%", `${i * 0.2 + 50}%`], //地图位置
+      layoutCenter: ["50%", `${i * 0.3 + 50}%`], //地图位置
       layoutSize: "100%",
       itemStyle: {
         normal: {
@@ -41,30 +41,30 @@ export const getMapOption = () => {
       // 最外围发光边界
       {
         map: "sd",
-        aspectScale: 0.85,
+        aspectScale: 0.9,
         layoutCenter: ["50%", "50%"], //地图位置
         layoutSize: "100%",
         z: 12,
         itemStyle: {
           normal: {
             areaColor: "#1f2428",
-            borderColor: "rgb(255, 187, 94)",
-            borderWidth: 5,
-            shadowColor: "rgba(255, 187, 94, 0.4)",
-            shadowBlur: 25,
+            borderColor: "rgb(235, 174, 92)",
+            borderWidth: 12,
+            shadowColor: "rgba(235, 174, 92, 0.4)",
+            shadowBlur: 20,
           },
         },
       },
       // 最外层遮罩蒙版
       {
         map: "sd",
-        aspectScale: 0.85,
+        aspectScale: 0.9,
         layoutCenter: ["50%", "50%"], //地图位置
         layoutSize: "100%",
         z: 14,
         itemStyle: {
           normal: {
-            areaColor: "rgba(134, 153, 186, 0.3)",
+            areaColor: "rgba(106, 125, 171, 0.45)",
             borderWidth: 0,
           },
         },
@@ -81,7 +81,7 @@ export const getMapOption = () => {
       {
         type: "map",
         mapType: "sd",
-        aspectScale: 0.85,
+        aspectScale: 0.9,
         layoutSize: "100%",
         layoutCenter: ["50%", "50%"], //地图位置
         z: 13,
@@ -91,6 +91,7 @@ export const getMapOption = () => {
               image: mapBg,
             },
             borderColor: "#8aa5db",
+            borderWidth: 2,
           },
         },
       },

@@ -1,9 +1,16 @@
 <!--  中间地图部分 -->
 <template>
-  <div class="map"></div>
+  <div class="map">
+    <CEcharts :option="mapOption" />
+  </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { ref, onMounted } from "vue";
+import { getMapOption } from "@/modules/echartMap";
+import CEcharts from "./common/CEcharts.vue";
+const mapOption = ref(getMapOption());
+</script>
 
 <style lang="scss" scoped>
 .map {

@@ -1,6 +1,6 @@
 <!-- 顶部标题 -->
 <template>
-  <header class="header">顶部标题</header>
+  <header class="header"></header>
 </template>
 
 <script setup lang="ts"></script>
@@ -8,9 +8,11 @@
 <style lang="scss" scoped>
 .header {
   position: absolute;
-  top: 0;
-  width: 100%;
+  margin: 0 12px;
+  top: 12px;
+  width: calc(100% - 24px);
   height: 87px;
-  outline: 1px solid #fff;
+  background: url("@/assets/images/顶部标题.png") no-repeat center center;
+  background-size: 100% 100%;
 }
 </style>

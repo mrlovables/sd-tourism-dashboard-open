@@ -1,6 +1,6 @@
 <!-- 右侧数据面板 -->
 <template>
-  <div class="right-panel">右侧数据面板</div>
+  <div class="right-panel"></div>
 </template>
 
 <script setup lang="ts"></script>
@@ -12,6 +12,5 @@
   height: 100%;
   right: 0;
   top: 0;
-  outline: 1px solid #fff;
 }
 </style>

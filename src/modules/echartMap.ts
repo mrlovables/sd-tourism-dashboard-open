@@ -30,7 +30,7 @@ export const getMapOption = () => {
   for (let i = 1; i <= colorList.length; i++) {
     const mapOption: any = {
       map: 'sd',
-      aspectScale: 0.9,
+      aspectScale: 0.85,
       z: 12 - i,
       layoutCenter: ['50%', `${i * 0.3 + 50}%`], //地图位置
       layoutSize: '100%',
@@ -54,32 +54,15 @@ export const getMapOption = () => {
       // 最外围发光边界
       {
         map: 'sd',
-        aspectScale: 0.9,
+        aspectScale: 0.85,
         layoutCenter: ['50%', '50%'], //地图位置
         layoutSize: '100%',
         z: 12,
         itemStyle: {
           normal: {
-            borderColor: {
-              type: 'linear',
-              x: -1,
-              y: 0,
-              x2: 1,
-              y2: 0,
-              colorStops: [
-                {
-                  offset: 0,
-                  color: 'rgba(232, 204, 149, 1)'
-                },
-                {
-                  offset: 1,
-                  color: 'rgba(170, 144, 91, 1)'
-                }
-              ],
-              global: false
-            },
-            borderWidth: 10,
-            shadowColor: 'rgba(218, 163, 88, 0.4)',
+            borderColor: '#fff2c6',
+            borderWidth: 8,
+            shadowColor: 'rgba(245, 229, 189, 0.4)',
             shadowBlur: 20
           }
         }
@@ -87,7 +70,7 @@ export const getMapOption = () => {
       // 最外层遮罩蒙版
       {
         map: 'sd',
-        aspectScale: 0.9,
+        aspectScale: 0.85,
         layoutCenter: ['50%', '50%'], //地图位置
         layoutSize: '100%',
         z: 14,
@@ -106,10 +89,10 @@ export const getMapOption = () => {
       // 内部蓝色边界
       {
         map: 'sd',
-        aspectScale: 0.9,
+        aspectScale: 0.85,
         layoutCenter: ['50%', '50%'], //地图位置
         layoutSize: '100%',
-        z: 13,
+        z: 12,
         itemStyle: {
           normal: {
             areaColor: {

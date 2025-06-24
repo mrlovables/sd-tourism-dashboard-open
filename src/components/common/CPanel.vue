@@ -39,6 +39,8 @@
     flex: 1;
     background: url('@/assets/images/panelBottomBg.png') no-repeat center bottom;
     background-size: 100% 100%;
+    padding: 0 24px;
+    box-sizing: border-box;
   }
 }
 </style>

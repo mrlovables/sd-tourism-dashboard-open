@@ -3,8 +3,14 @@
   <CPanel>
     <template #header>景点人流排名</template>
     <template #content>
-      <div class="list">
-        <div class="list-scroll">
+      <vue3ScrollSeamless
+        :dataList="list"
+        class="list"
+        :class-option="{
+          limitMoveNum: 5
+        }"
+      >
+        <div class="list-warpper">
           <article class="list__item" v-for="(item, index) in list" :key="useId">
             <section class="item__index">{{ 'NO.' + (index + 1) }}</section>
             <section class="item__label">{{ item.label }}</section>
@@ -19,12 +25,13 @@
             </div>
           </article>
         </div>
-      </div>
+      </vue3ScrollSeamless>
     </template>
   </CPanel>
 </template>
 
 <script setup lang="ts">
+import { vue3ScrollSeamless } from 'vue3-scroll-seamless'
 import CPanel from '@/components/common/CPanel.vue'
 import { onMounted, ref, useId } from 'vue'
 import { rankingOfScenicSpots } from '@/assets/data/人流排名'
@@ -41,9 +48,8 @@ onMounted(() => {
 </script>
 <style lang="scss" scoped>
 .list {
-  height: 200px;
+  max-height: 270px;
   overflow: hidden auto;
-
   &__item {
     position: relative;
     width: 100%;
@@ -83,5 +89,11 @@ onMounted(() => {
       }
     }
   }
+}
+.warp {
+  height: 270px;
+  width: 360px;
+  margin: 0 auto;
+  overflow: hidden;
 }
 </style>

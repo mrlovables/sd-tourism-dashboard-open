@@ -5,7 +5,7 @@
       <slot name="header">默认名称</slot>
     </div>
     <div class="panel-container">
-      <slot name="container"></slot>
+      <slot name="content"></slot>
     </div>
   </div>
 </template>
@@ -16,7 +16,11 @@
 .panel {
   position: relative;
   width: 472px;
-  height: fit-content;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-bottom: 24px;
   &-header {
     position: relative;
     width: 100%;
@@ -24,15 +28,17 @@
     display: flex;
     flex-direction: column;
     background: url('@/assets/images/titleBg.png') no-repeat center center;
+    background-size: 100% 100%;
     font-size: 20px;
     text-align: center;
     line-height: 50px;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
   }
   &-container {
     position: relative;
-    height: 120px;
-    outline: red solid 1px;
+    flex: 1;
+    background: url('@/assets/images/panelBottomBg.png') no-repeat center bottom;
+    background-size: 100% 100%;
   }
 }
 </style>

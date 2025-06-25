@@ -48,7 +48,7 @@ onMounted(() => {
 </script>
 <style lang="scss" scoped>
 .list {
-  max-height: 270px;
+  max-height: 250px;
   overflow: hidden auto;
   &__item {
     position: relative;

@@ -6,7 +6,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from "vue";
+import { ref } from "vue";
 import { getMapOption } from "@/modules/echartMap";
 import CEcharts from "./common/CEcharts.vue";
 const mapOption = ref(getMapOption());

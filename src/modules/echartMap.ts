@@ -39,6 +39,9 @@ export const getMapOption = () => {
           areaColor: colorList[i - 1],
           borderWidth: 0
         }
+      },
+      emphasis: {
+        focus: 'none'
       }
     }
     if (i === colorList.length) {
@@ -60,7 +63,7 @@ export const getMapOption = () => {
         z: 12,
         itemStyle: {
           normal: {
-            borderColor: '#fff2c6',
+            borderColor: '#d8a258',
             borderWidth: 8,
             shadowColor: 'rgba(245, 229, 189, 0.4)',
             shadowBlur: 20

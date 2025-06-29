@@ -6,14 +6,14 @@
     <!-- 接待游客人数TOP5 -->
     <top5Tourists />
     <!-- 山东省实时热词 -->
-    <!-- <realTimeHotWords /> -->
+    <realTimeHotWords />
   </div>
 </template>
 
 <script setup lang="ts">
 import industryRevenue from './rightPanel/industryRevenue.vue'
 import top5Tourists from './rightPanel/top5Tourists.vue'
-// import realTimeHotWords from './rightPanel/realTimeHotWords.vue'
+import realTimeHotWords from './rightPanel/realTimeHotWords.vue'
 </script>
 
 <style lang="scss" scoped>

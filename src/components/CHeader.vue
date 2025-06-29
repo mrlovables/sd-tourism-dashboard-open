@@ -21,6 +21,5 @@
   font-weight: 800;
   letter-spacing: 12px;
   color: rgba(230, 239, 253);
-  font-family: 'MStiffHeiPRC';
 }
 </style>

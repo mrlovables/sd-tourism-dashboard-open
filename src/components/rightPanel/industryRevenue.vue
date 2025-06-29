@@ -47,12 +47,6 @@ const createEchartBar = () => {
   })
 
   return {
-    tooltip: {
-      trigger: 'axis',
-      axisPointer: {
-        type: 'shadow'
-      }
-    },
     grid: {
       left: '0%',
       right: '0%',
@@ -130,6 +124,20 @@ const createEchartBar = () => {
             fontSize: 12,
             lineHeight: 16,
             color: '#93B9FF'
+          }
+        },
+        emphasis: {
+          itemStyle: {
+            color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+              {
+                offset: 0,
+                color: 'rgba(218, 163, 88, 1)'
+              },
+              {
+                offset: 1,
+                color: 'rgba(255, 130, 54, 1)'
+              }
+            ])
           }
         },
         itemStyle: {

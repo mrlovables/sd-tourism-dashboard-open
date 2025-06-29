@@ -94,7 +94,28 @@ const createEchartBar = () => {
             borderRadius: [100, 100]
           },
           emphasis: {
-            opacity: 1
+            color: new echarts.graphic.LinearGradient(
+              0,
+              1,
+              0,
+              0,
+              [
+                {
+                  offset: 0,
+                  color: 'rgba(218, 163, 88, 0.3)' // 0% 处的颜色
+                },
+                {
+                  offset: 0.6,
+                  color: 'rgba(218, 163, 88, 0.8)' // 60% 处的颜色
+                },
+                {
+                  offset: 1,
+                  color: 'rgba(218, 163, 88, 0)' // 100% 处的颜色
+                }
+              ],
+              false
+            ),
+            borderColor: 'rgba(218, 163, 88, 1)' // 边框颜色
           }
         },
         data: [123, 100, 125, 100, 125],

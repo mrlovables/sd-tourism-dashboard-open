@@ -1,4 +1,4 @@
-<!-- 年龄分布 -->
+<!-- 游客年龄分布 -->
 <template>
   <CPanel>
     <template #header>游客年龄分布</template>
@@ -173,6 +173,21 @@ const createEchartBar = (): EChartsOption => {
                       color: 'rgba(68, 95, 156, 1)'
                     }
                   ])
+                },
+                // hover样式
+                emphasis: {
+                  style: {
+                    fill: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                      {
+                        offset: 0,
+                        color: 'rgba(230, 165, 75, 1)'
+                      },
+                      {
+                        offset: 1,
+                        color: 'rgba(175, 111, 23, 1)'
+                      }
+                    ])
+                  }
                 }
               },
               {
@@ -196,6 +211,20 @@ const createEchartBar = (): EChartsOption => {
                       color: 'rgba(104, 134, 202, 1)'
                     }
                   ])
+                },
+                emphasis: {
+                  style: {
+                    fill: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                      {
+                        offset: 0,
+                        color: 'rgba(230, 165, 75, 1)'
+                      },
+                      {
+                        offset: 1,
+                        color: 'rgba(175, 111, 23, 1)'
+                      }
+                    ])
+                  }
                 }
               },
               {
@@ -219,6 +248,20 @@ const createEchartBar = (): EChartsOption => {
                       color: 'rgba(198, 213, 244, 1)'
                     }
                   ])
+                },
+                emphasis: {
+                  style: {
+                    fill: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                      {
+                        offset: 0,
+                        color: 'rgba(230, 165, 75, 1)'
+                      },
+                      {
+                        offset: 1,
+                        color: 'rgba(230, 165, 75, 1)'
+                      }
+                    ])
+                  }
                 }
               }
             ]
@@ -246,7 +289,6 @@ const createEchartBar = (): EChartsOption => {
     ]
   }
 }
-
 onMounted(() => {
   option.value = createEchartBar()
 })

@@ -31,6 +31,9 @@ export const getMapOption = () => {
     const mapOption: any = {
       map: 'sd',
       aspectScale: 0.85,
+      emphasis: {
+        disabled: true
+      },
       z: 12 - i,
       layoutCenter: ['50%', `${i * 0.3 + 50}%`], //地图位置
       layoutSize: '100%',
@@ -39,9 +42,6 @@ export const getMapOption = () => {
           areaColor: colorList[i - 1],
           borderWidth: 0
         }
-      },
-      emphasis: {
-        focus: 'none'
       }
     }
     if (i === colorList.length) {
@@ -61,6 +61,9 @@ export const getMapOption = () => {
         layoutCenter: ['50%', '50%'], //地图位置
         layoutSize: '100%',
         z: 12,
+        emphasis: {
+          disabled: true
+        },
         itemStyle: {
           normal: {
             borderColor: '#d8a258',
@@ -96,6 +99,9 @@ export const getMapOption = () => {
         layoutCenter: ['50%', '50%'], //地图位置
         layoutSize: '100%',
         z: 12,
+        emphasis: {
+          disabled: true
+        },
         itemStyle: {
           normal: {
             areaColor: {

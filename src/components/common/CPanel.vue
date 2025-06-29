@@ -26,13 +26,22 @@
     width: 100%;
     height: 50px;
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     background: url('@/assets/images/titleBg.png') no-repeat center center;
     background-size: 100% 100%;
     font-size: 20px;
-    text-align: center;
-    line-height: 50px;
     letter-spacing: 1px;
+    gap: 16px;
+    &::after,
+    &::before {
+      content: '';
+      position: relative;
+      width: 6px;
+      height: 6px;
+      background: rgba(218, 163, 88, 1);
+      display: block;
+    }
   }
   &-container {
     position: relative;

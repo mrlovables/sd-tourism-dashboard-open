@@ -66,9 +66,9 @@ export const getMapOption = () => {
         },
         itemStyle: {
           normal: {
-            borderColor: '#d8a258',
+            borderColor: 'rgb(180, 137, 81)',
             borderWidth: 8,
-            shadowColor: 'rgba(245, 229, 189, 0.4)',
+            shadowColor: 'rgba(218, 163, 88, 0.4)',
             shadowBlur: 20
           }
         }

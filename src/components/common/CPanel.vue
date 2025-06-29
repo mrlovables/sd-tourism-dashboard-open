@@ -32,7 +32,7 @@
     background-size: 100% 100%;
     font-size: 20px;
     letter-spacing: 1px;
-    gap: 16px;
+    gap: 8px;
     &::after,
     &::before {
       content: '';

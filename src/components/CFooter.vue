@@ -73,14 +73,16 @@ const numberData = ref<any>([
   display: flex;
   justify-content: center;
   gap: 72px;
+  pointer-events: none;
 }
 .number-item {
   position: relative;
   width: 268px;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 16px;
   align-items: center;
+  pointer-events: auto;
   .title {
     height: 35px;
     width: 100%;

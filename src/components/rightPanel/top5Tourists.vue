@@ -16,7 +16,7 @@ import CEcharts from '@/components/common/CEcharts.vue'
 
 const option = ref<any>({})
 const chartRef = ref()
-let highlightTimer: NodeJS.Timeout | null = null
+let highlightTimer: any = null
 let currentIndex = 0
 const VALUE = [123, 100, 125, 100, 125]
 

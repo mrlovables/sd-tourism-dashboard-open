@@ -17,7 +17,7 @@ import type { EChartsOption, TooltipComponentOption, CustomSeriesOption, BarSeri
 
 const option = ref<EChartsOption>({})
 const chartRef = ref()
-let highlightTimer: NodeJS.Timeout | null = null
+let highlightTimer: any = null
 let currentIndex = 0
 const VALUE = [100, 200, 300, 400, 300, 200, 100]
 

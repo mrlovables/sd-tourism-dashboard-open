@@ -3,18 +3,23 @@
   <CPanel>
     <template #header>各行业收入</template>
     <template #content>
-      <CEcharts :option="option" />
+      <CEcharts ref="chartRef" :option="option" @onload="startHighlightLoop" />
     </template>
   </CPanel>
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 import * as echarts from 'echarts'
 import CPanel from '@/components/common/CPanel.vue'
 import CEcharts from '@/components/common/CEcharts.vue'
 
 const option = ref<any>({})
+const chartRef = ref()
+let highlightTimer: NodeJS.Timeout | null = null
+let currentIndex = 0
+const VALUE = [100, 200, 300, 400, 500, 600, 700]
+
 const createEchartBar = () => {
   const xAxisData = ['旅游', '住宿', '餐饮', '购物', '娱乐', '交通', '其他']
   const seriesData = [
@@ -180,8 +185,40 @@ const createEchartBar = () => {
     ]
   }
 }
+
+// 高亮循环方法
+const startHighlightLoop = (chart: any) => {
+  if (!chart) return
+
+  // 如果已经存在定时器，先清除
+  if (highlightTimer) {
+    clearInterval(highlightTimer)
+    highlightTimer = null
+  }
+
+  highlightTimer = setInterval(() => {
+    // 取消之前的高亮
+    chart.dispatchAction({
+      type: 'downplay'
+    })
+    // 高亮当前柱子
+    chart.dispatchAction({
+      type: 'highlight',
+      seriesIndex: 0,
+      dataIndex: currentIndex
+    })
+    // 更新索引，循环
+    currentIndex = (currentIndex + 1) % VALUE.length
+  }, 1500)
+}
+
 onMounted(() => {
   option.value = createEchartBar()
+})
+onUnmounted(() => {
+  if (highlightTimer) {
+    clearInterval(highlightTimer)
+  }
 })
 </script>
 <style lang="scss" scoped></style>

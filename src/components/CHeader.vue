@@ -117,7 +117,7 @@ onBeforeUnmount(() => {
 
 .text-carousel {
   position: absolute;
-  top: 172px;
+  top: 120px;
   left: 50%;
   width: 744px;
   height: 43px;

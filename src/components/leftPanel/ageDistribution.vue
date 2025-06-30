@@ -1,6 +1,6 @@
 <!-- 游客年龄分布 -->
 <template>
-  <CPanel>
+  <CPanel class="age-distribution">
     <template #header>游客年龄分布</template>
     <template #content>
       <CEcharts ref="chartRef" :option="option" @onload="startHighlightLoop" />

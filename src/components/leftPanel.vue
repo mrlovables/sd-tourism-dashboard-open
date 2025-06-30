@@ -24,8 +24,8 @@ import receptionOfTourists from './leftPanel/receptionOfTourists.vue'
   left: 0;
   top: 0;
   display: grid;
-  gap: 32px;
-  padding: 111px 0 34px 38px;
+  gap: 24px;
+  padding: 111px 0 34px 16px;
   box-sizing: border-box;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(3, 1fr);

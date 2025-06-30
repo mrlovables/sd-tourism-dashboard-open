@@ -24,8 +24,8 @@ import realTimeHotWords from './rightPanel/realTimeHotWords.vue'
   right: 0;
   top: 0;
   display: grid;
-  gap: 32px;
-  padding: 111px 34px 24px 0;
+  gap: 24px;
+  padding: 111px 0 24px 0;
   box-sizing: border-box;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(3, 1fr);

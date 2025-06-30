@@ -48,9 +48,9 @@ onMounted(() => {
 </script>
 <style lang="scss" scoped>
 .list {
-  max-height: 250px;
+  max-height: 200px;
   outline: none;
-  overflow: hidden auto;
+  overflow: hidden;
   &__item {
     position: relative;
     width: 100%;
@@ -58,7 +58,7 @@ onMounted(() => {
     display: flex;
     align-items: center;
     gap: 28px;
-    padding: 0 12px;
+    padding: 0 12px 0 24px;
     box-sizing: border-box;
     font-size: 14px;
     &:nth-of-type(even) {

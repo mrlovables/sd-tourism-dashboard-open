@@ -115,7 +115,7 @@ onUnmounted(() => {
 .number-footer {
   position: absolute;
   width: 100%;
-  bottom: 55px;
+  bottom: 24px;
   display: flex;
   justify-content: center;
   gap: 72px;

@@ -19,8 +19,7 @@ const option = ref<EChartsOption>({})
 const chartRef = ref()
 let highlightTimer: any = null
 let currentIndex = 0
-const VALUE = [100, 200, 300, 400, 300, 200, 100]
-
+const values: number[] = [2000, 1430, 800, 410, 120]
 // 高亮循环方法
 const startHighlightLoop = (chart: any) => {
   if (!chart) return
@@ -43,7 +42,7 @@ const startHighlightLoop = (chart: any) => {
       dataIndex: currentIndex
     })
     // 更新索引，循环
-    currentIndex = (currentIndex + 1) % VALUE.length
+    currentIndex = (currentIndex + 1) % values.length
   }, 1500)
 }
 
@@ -111,7 +110,6 @@ const createEchartBar = (): EChartsOption => {
   echarts.graphic.registerShape('CubeRight', CubeRight)
   echarts.graphic.registerShape('CubeTop', CubeTop)
 
-  const VALUE = [100, 200, 300, 400, 300, 200, 100]
   return {
     tooltip: {
       trigger: 'axis',
@@ -132,7 +130,7 @@ const createEchartBar = (): EChartsOption => {
     },
     xAxis: {
       type: 'category',
-      data: ['1001', '1002', '1003', '1004', '1005', '1006', '1007'],
+      data: ['20以下', '20-30', '30-40', '40-50', '50以上'],
       axisLine: {
         show: true,
         lineStyle: {
@@ -297,7 +295,7 @@ const createEchartBar = (): EChartsOption => {
             ]
           }
         },
-        data: VALUE
+        data: values
       } as unknown as CustomSeriesOption,
       {
         type: 'bar',
@@ -314,7 +312,7 @@ const createEchartBar = (): EChartsOption => {
           color: 'transparent'
         },
         tooltip: {},
-        data: VALUE
+        data: values
       } as BarSeriesOption
     ]
   }

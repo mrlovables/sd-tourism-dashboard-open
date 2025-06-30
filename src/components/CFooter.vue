@@ -10,12 +10,12 @@
         <div class="data-info">
           <!-- 数字 -->
           <div class="number">
-            <span class="number-value">{{ item.value }}</span>
+            <Vue3Odometer class="number-value" :value="item.value" />
             <span class="number-unit">{{ item.unit }}</span>
           </div>
           <!-- 比较信息 -->
           <div class="compare">
-            <span class="compare-label">较上年</span>
+            <span class="compare-label">较上次</span>
             <img class="compare-img" :src="item.compare === 'up' ? up : down" alt="上涨下跌图标" />
             <span
               class="compare-value"
@@ -31,7 +31,9 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { onMounted, onUnmounted, ref } from 'vue'
+import Vue3Odometer from 'vue3-odometer'
+import 'odometer/themes/odometer-theme-default.css'
 import 行李箱图标 from '@/assets/images/行李箱图标.png'
 import 收入图标 from '@/assets/images/收入图标.png'
 import 刷卡图标 from '@/assets/images/刷卡图标.png'
@@ -63,6 +65,50 @@ const numberData = ref<any>([
     img: 刷卡图标
   }
 ])
+
+let intervalId: any = null
+
+// 用于存储上一次的 value 值
+const lastValues = ref<number[]>(numberData.value.map((item: any) => item.value))
+
+function randomizeNumberData() {
+  numberData.value = numberData.value.map((item: any, idx: number) => {
+    // 生成一个基于当前值的随机浮动（±10%）
+    const randomFactor = 1 + (Math.random() - 0.5) * 0.2 // ±10%
+    const prevValue = lastValues.value[idx]
+    const newValue = +(item.value * randomFactor).toFixed(1)
+    // 计算变化百分比
+    let proportion = 0
+    let compare: 'up' | 'down' = 'up'
+    if (prevValue !== 0) {
+      proportion = +(((newValue - prevValue) / Math.abs(prevValue)) * 100).toFixed(1)
+      compare = proportion >= 0 ? 'up' : 'down'
+      proportion = Math.abs(proportion)
+    }
+    // 更新lastValues
+    lastValues.value[idx] = newValue
+    return {
+      ...item,
+      value: newValue,
+      proportion,
+      compare
+    }
+  })
+}
+
+onMounted(() => {
+  // 初始化lastValues
+  lastValues.value = numberData.value.map((item: any) => item.value)
+  intervalId = window.setInterval(() => {
+    randomizeNumberData()
+  }, 10000)
+})
+
+onUnmounted(() => {
+  if (intervalId) {
+    clearInterval(intervalId)
+  }
+})
 </script>
 
 <style lang="scss" scoped>

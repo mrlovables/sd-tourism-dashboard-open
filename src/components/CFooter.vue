@@ -120,6 +120,8 @@ onUnmounted(() => {
   justify-content: center;
   gap: 72px;
   pointer-events: none;
+  bottom: -200px;
+    animation: entranceAnimation ease-in-out 0.75s forwards;
 }
 .number-item {
   position: relative;
@@ -185,6 +187,14 @@ onUnmounted(() => {
         height: 12px;
       }
     }
+  }
+}
+@keyframes entranceAnimation {
+  0%{
+    bottom: -200px;
+  }
+  100%{
+    bottom: 24px;
   }
 }
 </style>

@@ -30,4 +30,16 @@ import realTimeHotWords from './rightPanel/realTimeHotWords.vue'
   grid-template-columns: 1fr;
   grid-template-rows: repeat(3, 1fr);
 }
+.panel{
+  right:-500px;
+  animation: entranceAnimation ease-in-out 0.75s forwards;
+}
+@keyframes entranceAnimation {
+  0%{
+    right: -500px;
+  }
+  100%{
+    right: 0;
+  }
+}
 </style>

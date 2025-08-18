@@ -30,4 +30,16 @@ import receptionOfTourists from './leftPanel/receptionOfTourists.vue'
   grid-template-columns: 1fr;
   grid-template-rows: repeat(3, 1fr);
 }
+.panel{
+  left:-500px;
+  animation: entranceAnimation ease-in-out 0.75s  forwards;
+}
+@keyframes entranceAnimation {
+  0%{
+    left: -500px;
+  }
+  100%{
+    left: 0;
+  }
+}
 </style>
